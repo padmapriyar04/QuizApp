@@ -8,6 +8,12 @@ export const questionSlice = createSlice({
         track: 0,
     },
     reducers: {
+        startQuiz :(state,action)=>{
+            return{
+                ...state,
+                queue: action.payload
+            }
+        },
         FetchQandA: (state, action) => {
             const {questions,answers} = action.payload;
             return {
@@ -38,5 +44,5 @@ export const questionSlice = createSlice({
     }
 })
 
-export const { FetchQandA, Increment_track, Decrement_track,ResetQuestionSlice } = questionSlice.actions;
+export const { startQuiz,FetchQandA, Increment_track, Decrement_track,ResetQuestionSlice } = questionSlice.actions;
 export default questionSlice.reducer;

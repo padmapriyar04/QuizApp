@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { SetUserId } from "../Store/resultSlice";
+import { SetUserId } from "./Store/resultSlice.js";
 
 export default function Main(){
     const dispatch = useDispatch();

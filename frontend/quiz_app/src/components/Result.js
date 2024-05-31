@@ -1,12 +1,15 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import { ResetQuestionSlice } from "../Store/questionSlice";
-import { ResetResultSlice } from "../Store/resultSlice";
+import { ResetQuestionSlice } from "./Store/questionSlice.js";
+import { ResetResultSlice } from "./Store/resultSlice.js";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Result(){
     const {result,userId} = useSelector(state=>state.results);
     const {answers} = useSelector(state=>state.questions);
+    //const answers = [0, 0, 0, 2, 0, 2, 2, 1, 2];
+    console.log(answers);
+    console.log(result);
     const dispatch = useDispatch();
     const onclickhandler = ()=>{
         dispatch(ResetQuestionSlice());

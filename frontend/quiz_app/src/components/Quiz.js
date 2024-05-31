@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Question from "./Question";
 import { useDispatch, useSelector } from "react-redux";
-import { Increment_track, Decrement_track } from "../Store/questionSlice";
-import { PushResult } from "../Store/resultSlice";
+import { Increment_track, Decrement_track } from "./Store/questionSlice.js";
+import { PushResult } from "./Store/resultSlice.js";
 import { Link } from 'react-router-dom';
 
 export default function Quiz() {
