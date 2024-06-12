@@ -18,7 +18,7 @@ export default function Main() {
     return (
         <>
             <div className="container-fluid main-container p-0" style={{ width: '100%', height: '100vh', overflow: 'hidden', backgroundImage: 'linear-gradient(135deg, #09203f 10%, #537895 100%)' }}>
-                <div className="container" style={{ marginTop: '6%' }} >
+                <div className="container" style={{ marginTop: '20vh' }} >
                     <h1 className="text-center fs-1 text-light">Welcome,Let's start Quizzing</h1>
                     <h2 className="text-center fs-4  fw-light mt-4 text-light" >This quiz is designed to test your general knowledge.</h2>
                     <h2 className="text-center fs-4 fw-light text-light ">Are you ready to challenge yourself and learn something new?</h2>

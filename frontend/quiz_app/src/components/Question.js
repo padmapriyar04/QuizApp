@@ -3,15 +3,16 @@ import useFetchQuestions from "./Custom Hooks/useFetchQuestions";
 import { useSelector, useDispatch } from "react-redux";
 import { UpdateResultArray } from "./Store/resultSlice.js";
 import { FetchQandA } from "./Store/questionSlice.js";
-import { questions,answers } from "./data.js";
+import { questions, answers } from "./data.js";
 
 export default function Question({ setans }) {
     const [checked, setChecked] = useState(undefined);
-    const {isloading,apiData,serverError} = useFetchQuestions();
-    const storeDataQ = useSelector(state=>state.questions.queue);
-    const storeDataA = useSelector(state=>state.questions.answers);
+    const { isloading, apiData, serverError } = useFetchQuestions();
+    const storeDataQ = useSelector(state => state.questions.queue);
+    const storeDataA = useSelector(state => state.questions.answers);
     const dispatch = useDispatch();
     const { track } = useSelector(state => state.questions);
+
 
 
     const handleChange = (i) => {
@@ -32,23 +33,36 @@ export default function Question({ setans }) {
         setChecked(undefined);
     }, [checked]);
 
-    if(isloading){
-        return <>Loading...</>
-    }
-    
+    /*if (isloading) {
+        
+    }*/
+    /*return (
+        <>
+        <div>
+            <h1 className="text-light"> isloading</h1>
+        </div>
+        </>
+    )*/
+
     return (
         <>
-            <div>
-            <div>
-                <p>{storeDataQ[track]?.Question}</p>
-                {storeDataQ[track]?.Options.map((option, i) => (
-                    <li key={option} style={{ listStyle: "none" }}>
-                        <input type="radio" name="option" onChange={() => handleChange(i)} />
-                        <label>{option}</label>
-                    </li>
-                ))}
+            {(track<9) &&(
+                <div className="container  d-flex justify-content-center align-items-center" style={{ margin: 'auto' }}>
+                <div className="container p-0 m-0" style={{ width: '60%' }}>
+                    <div className="container p-0">
+                        <p className="text-light fs-2">{storeDataQ[track]?.Question}</p>
+                        <div className="container mt-5 ps-5 ">
+                            {storeDataQ[track]?.Options.map((option, i) => (
+                                <li className="text-light fs-3 mb-3 " key={option} style={{ listStyle: "none" }}>
+                                    <input type="radio" name="option" onChange={() => handleChange(i)} />
+                                    <label>{option}</label>
+                                </li>
+                            ))}
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
+            )}
         </>
     )
 }
