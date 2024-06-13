@@ -66,6 +66,7 @@ export default function Quiz() {
                                 >
                                     View Results
                                 </Link>
+                                <h2 className="fs-4 text-light " style={{marginTop:'6vh'}}>Thank you for participating! We hope to see you again soon:)</h2>
                             </div>
                         )}
                     </div>
