@@ -26,41 +26,40 @@ export default function Result() {
     }
 
     return (
-        <>
-            <div className="container-fluid m-0 p-0 text-light" style={{ width: '100%', height: '100vh', overflow: 'hidden', backgroundImage: 'linear-gradient(135deg, #09203f 10%, #537895 100%)', position: 'relative' }}>
-                <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-                    <img src={exam_logo} alt="Background Image" className="img-fluid" style={{ width: '50vw', height: '80vh', opacity: 0.2, zIndex: 1, marginTop: '10vh', marginLeft: '25vw' }} />
+        <div className="container-fluid m-0 p-0 text-light d-flex flex-column align-items-center justify-content-center" style={{ width: '100%', height: '100vh', overflow: 'hidden', backgroundImage: 'linear-gradient(135deg, #09203f 10%, #537895 100%)', position: 'relative' }}>
+            <h2 className="mb-4" style={{ fontSize: '3vw',color:'#FFFACD'}}>Quiz Completed!</h2>
+            <p className="mb-4" style={{ fontSize: '2vw',color:'#E6E6FA' }}>Congratulations on completing the quiz! Here's a summary of your performance:</p>
+
+            <div className="container text-center position-relative" style={{ maxWidth: '60%', maxHeight: '60%',color:'#FFFFF0',  backgroundColor: 'rgba(0, 0, 0, 0.3)', borderRadius: '10px', padding: '3vh', marginBottom: '5vh', marginTop: '3vh' }}>
+                <div className="mb-3 d-flex justify-content-between flex-wrap" style={{ fontSize: '1.5vw' }}>
+                    <span>UserName :</span>
+                    <span>{userId}</span>
                 </div>
-                <div className="container position-absolute text-warning" style={{ top: '25vh', width: '30vw', left: '35vw', height: '60vh' }}>
-                    <div className="mb-4 fs-3 d-flex justify-content-between">
-                        <span  >UserName :</span>
-                        <span>{userId}</span>
-                    </div>
-                    <div className="mb-4 fs-3 d-flex justify-content-between" >
-                        <span>Total Quiz Points :</span>
-                        <span>90</span>
-                    </div>
-                    <div className="mb-4 fs-3 d-flex justify-content-between" >
-                        <span >Total Questions :</span>
-                        <span>9</span>
-                    </div>
-                    <div className="mb-4 fs-3 d-flex justify-content-between" >
-                        <span >Questions attempted :</span>
-                        <span>{attempted_count}</span>
-                    </div>
-                    <div className="mb-4 fs-3 d-flex justify-content-between" >
-                        <span >Quiz Points earned :</span>
-                        <span>{points}</span>
-                    </div>
-                    <div className="mb-4 fs-3 d-flex justify-content-between" >
-                        <span >Quiz Result :</span>
-                        <span>{(points > 40) ? "Passed" : "Failed"}</span>
-                    </div>
+                <div className="mb-3 d-flex justify-content-between flex-wrap" style={{ fontSize: '1.5vw' }}>
+                    <span>Total Quiz Points :</span>
+                    <span>90</span>
                 </div>
-                <div>
-                    <Link to={'/'}  className=" row justify-content-center btn btn-success mt-4" onClick={onclickhandler}>Restart Quiz</Link>
+                <div className="mb-3 d-flex justify-content-between flex-wrap" style={{ fontSize: '1.5vw' }}>
+                    <span>Total Questions :</span>
+                    <span>9</span>
+                </div>
+                <div className="mb-3 d-flex justify-content-between flex-wrap" style={{ fontSize: '1.5vw' }}>
+                    <span>Questions attempted :</span>
+                    <span>{attempted_count}</span>
+                </div>
+                <div className="mb-3  d-flex justify-content-between flex-wrap" style={{ fontSize: '1.5vw' }}>
+                    <span>Quiz Points earned :</span>
+                    <span>{points}</span>
+                </div>
+                <div className="mb-3  d-flex justify-content-between flex-wrap" style={{ fontSize: '1.5vw' }}>
+                    <span>Quiz Result :</span>
+                    <span>{(points > 40) ? "Passed" : "Failed"}</span>
                 </div>
             </div>
-        </>
-    )
+            <p className="mt-4" style={{ fontSize: '1.5vw',color:'#B0E0E6' }}>
+                {(points > 40) ? "Great job! Keep up the good work..." : "Don't worry, Try again and improve your score!"}
+            </p>
+            <Link to={'/'} className="btn btn-warning mt-4" onClick={onclickhandler} style={{ marginBottom: '3vh',padding:'0 auto' }}>Restart Quiz</Link>
+        </div>
+    );
 }

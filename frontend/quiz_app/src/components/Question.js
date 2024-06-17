@@ -48,13 +48,13 @@ export default function Question({ setans }) {
         <>
             {(track<9) &&(
                 <div className="container  d-flex justify-content-center align-items-center" style={{ margin: 'auto' }}>
-                <div className="container p-0 m-0" style={{ width: '60%' }}>
+                <div className="container p-0 m-0" style={{ width: '60vw' }}>
                     <div className="container p-0">
-                        <p className="text-light fs-2">{storeDataQ[track]?.Question}</p>
-                        <div className="container mt-5 ps-5 ">
+                        <p className="text-light " style={{fontSize:'2.7vw',padding:'2vw'}}>{storeDataQ[track]?.Question}</p>
+                        <div className="container mt-5vw mb-5vw ps-5 ">
                             {storeDataQ[track]?.Options.map((option, i) => (
-                                <li className="text-light fs-3 mb-3 " key={option} style={{ listStyle: "none" }}>
-                                    <input type="radio" name="option" onChange={() => handleChange(i)} />
+                                <li className="text-light mb-3 " key={option} style={{ listStyle: "none",fontSize:'1.7vw' }}>
+                                    <input type="radio" name="option" style={{width:'1vw',height:'1vw',marginLeft:'1vw'}} onChange={() => handleChange(i)} />
                                     <label>{option}</label>
                                 </li>
                             ))}
